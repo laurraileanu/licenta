@@ -1,0 +1,11 @@
+.btn{
+    text-transform: uppercase;
+}
+.btn-primary{
+    background-color: $secondary-color;
+    border-color:$secondary-color;
+    &:hover{
+        background-color: $secondary-color-darker;
+        border-color:$secondary-color-darker;
+    }
+}

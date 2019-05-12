@@ -2,9 +2,12 @@
 $body-bg: #f8fafc;
 
 // Typography
-$font-family-sans-serif: "Nunito", sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+$font-regular: "Regular","Arial",sans-serif;
+$font-light: "Light","Arial",sans-serif;
+$font-semibold: "SemiBold","Arial",sans-serif;
+$font-bold: "Bold","Arial",sans-serif;
 
 // Colors
 $blue: #3490dc;
@@ -20,8 +23,10 @@ $cyan: #6cb2eb;
 $white: #fff;
 
 $main-color:#1a1a1a;
-$second-color:#761825;
-$second-lighter-color:#cf2737;
+$secondary-color:#67DFD4;
+$secondary-color-darker:#40AEA4;
+$background-color:#f1f8ff;
+$border-color:#c8e1ff;
 
 $theme-colors: (
         primary: #761825
