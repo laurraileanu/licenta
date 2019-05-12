@@ -2,6 +2,8 @@
 
 @push('styles')
     <link rel="stylesheet" href="{{ elixir('css/pages/home.css') }}">
+    <link rel="stylesheet" href="{{ elixir('css/plugins/bootstrap-datetimepicker.min.css') }}">
+    <link rel="stylesheet" href="{{ elixir('css/plugins/b-datepicker.css') }}">
 @endpush
 
 @section('content')
@@ -12,26 +14,26 @@
             </div>
             <div class="section-body">
                 <form action="">
-                    <div class="row">
+                    <div class="row align-items-end">
                         <div class="col-lg-3">
+                            <label for="date">Data</label>
                             <div class="input-group material with-icon">
                                 <i class="far fa-calendar"></i> 
-                                <input type="text" name="date" id="date" required> 
-                                <label for="date">Data</label>
+                                <input type="text" id="date" required> 
                             </div>
                         </div>
                         <div class="col-lg-3">
+                            <label for="timepicker">Ora</label>
                             <div class="input-group material with-icon">
                                 <i class="far fa-clock"></i>
-                                <input type="text" name="time" id="time" required> 
-                                <label for="time">Ora</label>
+                                <input type="text" name="time" id="timepicker" required class="datetimepicker-input" data-target="#timepicker" data-toggle="datetimepicker"> 
                             </div>
                         </div>
                         <div class="col-lg-3">
+                            <label for="guests">Persoane</label>
                             <div class="input-group material with-icon">
                                 <i class="fas fa-users"></i>
-                                <input type="number" name="guests" id="guests" required min="1" value="1"> 
-                                <label for="guests">Persoane</label>
+                                <input type="text" name="guests" id="guests" required min="1" value="1"> 
                             </div>
                         </div>
                         <div class="col-lg-3">
@@ -45,5 +47,8 @@
 @endsection
 
 @push('scripts')
+<script src="{{ elixir('js/plugins/moment.js') }}"></script>
+<script src="{{ elixir('js/plugins/b-datepicker.js') }}"></script>
+<script src="{{ elixir('js/plugins/bootstrap-datetimepicker.min.js') }}"></script>
 <script src="{{ elixir('js/pages/home.js') }}"></script>
 @endpush

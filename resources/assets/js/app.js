@@ -20,8 +20,3 @@ window.Vue = require('vue');
 // const app = new Vue({
 //     el: '#app'
 // });
-
-$('.hamburger').click(function(){
-   $(this).toggleClass('active');
-   $('#mobile-menu').toggleClass('active'); 
-});

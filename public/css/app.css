@@ -10694,6 +10694,14 @@ a.text-dark:focus {
   font-style: normal;
 }
 
+@font-face {
+  font-family: "fontello";
+  src: url("/fonts/fontello-webfont.eot");
+  src: url("/fonts/fontello-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/fontello-webfont.woff") format("woff"), url("/fonts/fontello-webfont.ttf") format("truetype"), url("/fonts/fontello-webfont.svg#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .btn {
   text-transform: uppercase;
 }
@@ -10743,31 +10751,9 @@ a.text-dark:focus {
   position: relative;
 }
 
-.input-group.material input:focus {
-  border: 1px solid #67DFD4;
-}
-
-.input-group.material input:focus + label {
-  font-size: 14px;
-  top: -11px;
-  color: #67DFD4;
-}
-
-.input-group.material input:valid + label {
-  font-size: 14px;
-  top: -11px;
-}
-
-.input-group.material label {
-  margin: 0;
-  position: absolute;
+label {
   font-family: "SemiBold", "Arial", sans-serif;
-  top: 10px;
-  left: 10px;
-  font-size: 18px;
-  padding: 0 5px;
-  background: white;
-  transition: all 0.3s ease;
+  font-size: 16px;
 }
 
 body {
@@ -10798,5 +10784,26 @@ body #main {
   color: #6A6868;
   border-bottom: 1px solid rgba(0, 0, 0, 0.24);
   text-transform: uppercase;
+}
+
+.datepicker {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.datepicker td,
+.datepicker th {
+  padding: 8px;
+}
+
+.datepicker td.disabled,
+.datepicker th.disabled {
+  opacity: 0.4;
+  cursor: no-drop !important;
+}
+
+.datepicker .day.active,
+.datepicker .month.active,
+.datepicker .year.active {
+  background: #40AEA4 !important;
 }
 
