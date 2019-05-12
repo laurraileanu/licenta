@@ -49091,11 +49091,6 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 //     el: '#app'
 // });
 
-$('.hamburger').click(function () {
-  $(this).toggleClass('active');
-  $('#mobile-menu').toggleClass('active');
-});
-
 /***/ }),
 
 /***/ "./resources/assets/js/bootstrap.js":
