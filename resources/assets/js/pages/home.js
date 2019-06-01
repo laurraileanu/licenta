@@ -34,5 +34,21 @@ $(document).ready(function(){
     $('#timepicker').datetimepicker({
         format: 'HH:mm'
     });
+
+    //quantity buttons
+    $('.qunatity-buttons button').click(function(){
+        var inputVal =  parseInt($('#guests').val()),
+            t = $(this);
+        if( t.hasClass('plus')){
+            $('#guests').attr('value', inputVal + 1);
+        } else {
+            $('#guests').attr('value', inputVal - 1);
+            if(inputVal < 3) {
+                Notify("Este nevoie de cel putin o persoana pentru a face o rezervare!", null, null, 'danger');
+                $('#guests').attr('value', 1);
+            }
+        }
+
+    });
 });
 

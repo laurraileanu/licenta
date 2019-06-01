@@ -30,6 +30,7 @@
             @include('layouts.web.includes.footer')
 
         </footer>
+        <div id="notifications"></div>
         <div id="modals">
 
             @stack('modals')

@@ -34,6 +34,10 @@
                             <div class="input-group material with-icon">
                                 <i class="fas fa-users"></i>
                                 <input type="text" name="guests" id="guests" required min="1" value="1"> 
+                                <div class="qunatity-buttons">
+                                    <button type="button" class="plus">+</button>
+                                    <button type="button" class="minus">-</button>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-3">

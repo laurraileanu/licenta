@@ -10707,13 +10707,36 @@ a.text-dark:focus {
 }
 
 .btn-primary {
-  background-color: #67DFD4;
-  border-color: #67DFD4;
+  background-color: #b08f5a;
+  border-color: #b08f5a;
 }
 
 .btn-primary:hover {
-  background-color: #40AEA4;
-  border-color: #40AEA4;
+  background-color: #91774e;
+  border-color: #91774e;
+}
+
+.qunatity-buttons {
+  position: absolute;
+  bottom: 0;
+  right: 60px;
+}
+
+.qunatity-buttons button {
+  width: 25px;
+  border-radius: 2px;
+  border: 0 none;
+  background: transparent;
+  padding: 0;
+  font-size: 30px;
+  height: 24px;
+  line-height: 20px;
+  display: block;
+  outline: none;
+}
+
+.qunatity-buttons button:hover {
+  color: #b08f5a;
 }
 
 @media (max-width: 991px) {
@@ -10758,10 +10781,11 @@ label {
 
 body {
   font-family: "Regular", "Arial", sans-serif;
-  background: #67DFD4;
+  background: #b08f5a;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: url("/img/bgbody.png") no-repeat fixed center center;
 }
 
 body #main {
@@ -10804,6 +10828,17 @@ body #main {
 .datepicker .day.active,
 .datepicker .month.active,
 .datepicker .year.active {
-  background: #40AEA4 !important;
+  background: #b08f5a !important;
+}
+
+#notifications {
+  cursor: pointer;
+  position: fixed;
+  right: 0px;
+  z-index: 9999;
+  bottom: 0px;
+  margin-bottom: 22px;
+  margin-right: 15px;
+  max-width: 300px;
 }
 

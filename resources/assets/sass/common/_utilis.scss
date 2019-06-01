@@ -4,6 +4,7 @@ body{
     min-height:100vh;
     display:flex;
     flex-direction: column;
+    background: url('/img/bgbody.png') no-repeat fixed center center; 
     #main{
         flex: 1;
     }
@@ -42,7 +43,19 @@ body{
     }
     .day,.month,.year{
         &.active{
-            background: #40AEA4 !important;
+            background: $secondary-color !important;
         }
     }
+}
+
+
+#notifications {
+    cursor: pointer;
+    position: fixed;
+    right: 0px;
+    z-index: 9999;
+    bottom: 0px;
+    margin-bottom: 22px;
+    margin-right: 15px;
+    max-width: 300px;   
 }
