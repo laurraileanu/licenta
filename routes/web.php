@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/checkout', 'checkoutController@index')->name('checkout');
 
 Route::get('/register', 'Web\Auth\AuthController@register')->name('register');
 Route::post('/register', 'Web\Auth\AuthController@register_post')->name('register');

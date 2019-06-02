@@ -15,6 +15,9 @@ body{
     padding:30px;
     border-radius:10px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    @media(max-width:767px){
+        padding:15px;
+    }
     .section-heading{
         h2{
             font-size:24px;
@@ -25,10 +28,11 @@ body{
             color:#6A6868;
             border-bottom:1px solid rgba(0,0,0,.24);
             text-transform: uppercase;
+            @media(max-width:767px){
+                font-size: 20px;
+                line-height: 24px;
+            }
         }
-    }
-    .section-body{
-
     }
 }
 
@@ -58,4 +62,16 @@ body{
     margin-bottom: 22px;
     margin-right: 15px;
     max-width: 300px;   
+}
+
+.heading-container{
+    padding-bottom: 30px;
+    font-size: 22px;
+    font-family: $font-semibold;
+    @media(max-width:767px){
+        font-size: 16px;
+    }
+    p{
+        margin:0;
+    }
 }

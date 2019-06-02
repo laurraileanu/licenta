@@ -1,14 +1,5 @@
 $(document).ready(function(){
 
-    $('#guests').keypress(function(){
-        var keycode = event.keyCode;
-        if (keycode > 48 && keycode < 57){
-            return true;
-        } else {
-            return false;
-        }
-    });
-
     // datepicker stuff
     var date = new Date();
     var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
@@ -31,10 +22,22 @@ $(document).ready(function(){
     $('#date').datepicker('setDate', today);
     // end of datepicker
 
+
+    //timepicker stuff
     $('#timepicker').datetimepicker({
         format: 'HH:mm'
     });
+    // end fo timepicker stuff
 
+    
+    $('#guests').keypress(function(){
+        var keycode = event.keyCode;
+        if (keycode > 48 && keycode < 57){
+            return true;
+        } else {
+            return false;
+        }
+    });
     //quantity buttons
     $('.qunatity-buttons button').click(function(){
         var inputVal =  parseInt($('#guests').val()),
@@ -50,5 +53,15 @@ $(document).ready(function(){
         }
 
     });
+    
+    $(document).on('click','._table.available', function(){
+        $(this).toggleClass('active');
+    });
 });
 
+
+
+//scripturi de sters
+$('#search').click(function(){
+    $('#restaurant-map').removeClass('d-none');
+});

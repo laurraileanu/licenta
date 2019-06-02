@@ -9,7 +9,7 @@
 @section('content')
     <div class="container py-5">
         <div class="sqaured-section">
-            <div class="section-heading">
+            <div class="section-heading text-center">
                 <h2>Selectati data si ora rezervarii</h2>
             </div>
             <div class="section-body">
@@ -41,10 +41,23 @@
                             </div>
                         </div>
                         <div class="col-lg-3">
-                            <button class="btn btn-primary btn-lg w-100" type="submit">Cauta</button>
+                            <button id="search" class="btn btn-primary btn-lg w-100" type="submit">Cauta</button>
                         </div>
                     </div>
                 </form>
+                <div id="restaurant-map" class="d-none">
+                    <div class="heading-container text-center">
+                        <p>Mese disponibile pentru [n] persoane pe [data] la [ora]</p>
+                        <p class="smal text-secondary">click pe o masa disponibila pentru a o rezerva</p>
+                    </div>
+                    <div class="map">
+                        {{-- clasa 'disabled' pentru scaunele indisponibile ; fara clasa 'available' --}}
+                        @for($i=1; $i<26; $i++)
+                            <a class="_table available" href="javascript:void(0)" data-id="table-{{$i}}">{{$i}}</a>
+                        @endfor
+                        <img src="{{asset('img/restaurant.png')}}">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
