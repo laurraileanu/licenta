@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/checkout', 'checkoutController@index')->name('checkout');
+Route::get('/', 'HomeController@index')->name('reservation.setup');
+Route::get('/checkout', 'CheckoutController@index')->name('reservation.checkout');
 
 Route::get('/register', 'Web\Auth\AuthController@register')->name('register');
 Route::post('/register', 'Web\Auth\AuthController@register_post')->name('register');
 Route::post('/login', 'Web\Auth\AuthController@login_post')->name('login');
 Route::get('/logout', 'Web\Auth\AuthController@logout')->name('logout');
+
+Route::get('/tables/available', 'ReservationController@getAvailableTables')->name('available.tables');
+Route::post('/tables/reserve', 'ReservationController@reserve')->name('available.reservation');
+Route::post('/checkout', 'CheckoutController@submit')->name('checkout.submit');

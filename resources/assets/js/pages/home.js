@@ -1,5 +1,5 @@
-$(document).ready(function(){
 
+$(document).ready(function(){
     // datepicker stuff
     var date = new Date();
     var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
@@ -53,15 +53,83 @@ $(document).ready(function(){
         }
 
     });
-    
+    var tables=[];
     $(document).on('click','._table.available', function(){
         $(this).toggleClass('active');
+        let id=$(this).data('table-id');
+        let table = tables.find((table)=>{
+            return table.id===id;
+        });
+        table.selected=$(this).hasClass('active');
+    });
+    function resetTable(table){
+        table.removeClass('active');
+        table.removeClass('available');
+        table.removeClass('unavailable');
+    }
+    $("form#search-table").submit(function (e){
+        let form = $(this);
+        let map= $("#restaurant-map");
+
+        map.addClass('d-none');
+        e.preventDefault();
+        axios.get('/tables/available', {
+            params: {
+                date:form.find(`input[name="date"]`).val(),
+                time:form.find(`input[name="time"]`).val(),
+                guests:form.find(`input[name="guests"]`).val()
+            }
+        })
+        .then(function (response) {
+            console.log(response);
+            let map= $("#restaurant-map");
+            tables = response.data.tables;
+            let availableTables= tables.filter((table)=>{
+                return table.status==='available';
+            }).length;
+            map.find('#head-text').text(`Mese disponibile pentru ${availableTables} persoane pe ${form.find(`input[name="date"]`).val()} la ${form.find(`input[name="time"]`).val()}`);
+
+            tables.forEach((table)=>{
+                table.DOM= $(`a[data-table-id="${table.id}"]`).first();
+                resetTable(table.DOM);
+                table.DOM.addClass(table.status);
+            });
+            map.removeClass('d-none');
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+    });
+    $("#reserve").click((e)=>{
+        let form = $("#search-table").first();
+        let selectedTables= tables.filter((table)=>{
+            if (table.selected){
+                return true;
+            }
+        });
+
+        selectedTables = selectedTables.map((table)=>{
+            return table.id;
+        });
+        console.log(selectedTables.length);
+        if (selectedTables.length===0){
+            alert('selecteaza o masa');
+            return false;
+        }
+        axios.post('/tables/reserve', {
+                date:form.find(`input[name="date"]`).val(),
+                time:form.find(`input[name="time"]`).val(),
+                guests:form.find(`input[name="guests"]`).val(),
+                selectedTables:selectedTables
+        })
+        .then(function (response) {
+            //window.location=response.data.redirect;
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
     });
 });
 
 
 
-//scripturi de sters
-$('#search').click(function(){
-    $('#restaurant-map').removeClass('d-none');
-});

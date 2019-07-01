@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Table;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.homepage')->withProducts(collect([]));
+        $tables=Table::all();
+        return view('pages.homepage',['tables'=>$tables])->withProducts(collect([]));
     }
 }

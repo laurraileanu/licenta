@@ -13,13 +13,13 @@
                 <h2>Selectati data si ora rezervarii</h2>
             </div>
             <div class="section-body">
-                <form action="">
+                <form action="search/table" id="search-table">
                     <div class="row align-items-end">
                         <div class="col-lg-3">
                             <label for="date">Data</label>
                             <div class="input-group material with-icon">
                                 <i class="far fa-calendar"></i> 
-                                <input type="text" id="date" required> 
+                                <input type="text" id="date" name="date" required>
                             </div>
                         </div>
                         <div class="col-lg-3">
@@ -47,15 +47,20 @@
                 </form>
                 <div id="restaurant-map" class="d-none">
                     <div class="heading-container text-center">
-                        <p>Mese disponibile pentru [n] persoane pe [data] la [ora]</p>
+                        <p id="head-text"></p>
                         <p class="smal text-secondary">click pe o masa disponibila pentru a o rezerva</p>
                     </div>
-                    <div class="map">
+                    <div class="map" id="map">
                         {{-- clasa 'disabled' pentru scaunele indisponibile ; fara clasa 'available' --}}
-                        @for($i=1; $i<26; $i++)
-                            <a class="_table available" href="javascript:void(0)" data-id="table-{{$i}}">{{$i}}</a>
-                        @endfor
+                        @foreach($tables as $table)
+                            <a class="_table" href="javascript:void(0)" data-table-id="{{$table->id}}">{{$table->name}}</a>
+                        @endforeach
                         <img src="{{asset('img/restaurant.png')}}">
+                    </div>
+                    <div>
+                        <button id="reserve">
+                            Rezerva
+                        </button>
                     </div>
                 </div>
             </div>

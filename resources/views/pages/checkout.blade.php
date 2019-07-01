@@ -16,19 +16,19 @@
             <div class="section-body">
                 <div class="booking-details">
                     <div class="row">
-                        <div class="col-6 text-right"><p>Data si ora:</p></div>
-                        <div class="col-6 text-left"><span>[data], [ora]</span></div>
-                        <div class="col-6 text-right"><p>Mese pentru [n] persoane:</p></div>
+                        <div class="col-6 text-right"><p>Data si ora: </p></div>
+                        <div class="col-6 text-left"><span>{{$currentReservation['date']}} {{$currentReservation['time']}}</span></div>
+                        <div class="col-6 text-right"><p>Mese pentru {{$currentReservation['guests']}} persoane:</p></div>
                         <div class="col-6 text-left">
                             <ul class="d-flex flex-wrap">
-                                @for($i=1; $i<4; $i++)
-                                    <li class="_table">{{$i}}</li>
-                                @endfor
+                                @foreach($currentReservation['selectedTables'] as $table)
+                                        <li class="_table">{{$table}}</li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
                 </div>
-                <form class="checkout-form" action="">
+                <form class="checkout-form" id="checkout-form" action="{{route('checkout.submit')}}">
                     <div class="heading-container text-center">
                         <p>Formularul de rezervare</p>
                         <p class="smal text-secondary">Completati formularul de mai jos cu datele necesare</p>
@@ -61,7 +61,7 @@
                         <div class="col-sm-12 mb-5">
                             <label for="mentions">Alte mentiuni (optional)</label>
                             <div class="input-group material">
-                                <textarea type="text" name="mentions" id="mentions"> </textarea>
+                                <textarea type="text" name="notes" id="notes"> </textarea>
                             </div>
                         </div>
                         <div class="col-sm-12">
@@ -79,4 +79,21 @@
 
 @push('scripts')
 <script src="{{ elixir('js/pages/home.js') }}"></script>
+    <script>
+        $(document).ready(()=>{
+            $("#checkout-form").submit(function(e){
+                let form = $("#checkout-form");
+                e.preventDefault();
+                console.log(form.attr('action'));
+                axios.post(form.attr('action'),{
+
+                    first_name: form.find('input[name="first_name"]').val(),
+                    last_name:  form.find('input[name="last_name"]').val(),
+                    phone:      form.find('input[name="phone"]').val(),
+                    email:      form.find('input[name="email"]').val(),
+                    notes:      form.find('textarea[name="notes"]').val()
+                });
+            });
+        });
+    </script>
 @endpush

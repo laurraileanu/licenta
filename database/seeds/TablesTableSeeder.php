@@ -1,0 +1,92 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class TablesTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        \App\Table::query()->truncate();
+        //
+        \App\Table::create(
+            ['name'=>'A']
+        );
+        \App\Table::create(
+            ['name'=>'B']
+        );
+        \App\Table::create(
+            ['name'=>'C']
+        );
+        \App\Table::create(
+            ['name'=>'D']
+        );
+        \App\Table::create(
+            ['name'=>'E']
+        );
+        \App\Table::create(
+            ['name'=>'F']
+        );
+        \App\Table::create(
+            ['name'=>'G']
+        );
+        \App\Table::create(
+            ['name'=>'H']
+        );
+        \App\Table::create(
+            ['name'=>'I']
+        );
+        \App\Table::create(
+            ['name'=>'J']
+        );
+        \App\Table::create(
+            ['name'=>'K']
+        );
+        \App\Table::create(
+            ['name'=>'L']
+        );
+        \App\Table::create(
+            ['name'=>'M']
+        );
+        \App\Table::create(
+            ['name'=>'N']
+        );
+        \App\Table::create(
+            ['name'=>'O']
+        );
+        \App\Table::create(
+            ['name'=>'P']
+        );
+        \App\Table::create(
+            ['name'=>'Q']
+        );
+        \App\Table::create(
+            ['name'=>'R']
+        );
+        \App\Table::create(
+            ['name'=>'S']
+        );
+        \App\Table::create(
+            ['name'=>'T']
+        );
+        \App\Table::create(
+            ['name'=>'U']
+        );
+        \App\Table::create(
+            ['name'=>'V']
+        );
+        \App\Table::create(
+            ['name'=>'W']
+        );
+        \App\Table::create(
+            ['name'=>'X']
+        );
+        \App\Table::create(
+            ['name'=>'Y']
+        );
+    }
+}

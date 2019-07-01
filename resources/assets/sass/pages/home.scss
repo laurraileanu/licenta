@@ -33,8 +33,14 @@
             animation: bounce 0.3s linear 1;
         }
         &.active{
-            background-color:red;
+            background-color:green;
         }
+        &.unavailable{
+            animation:none !important;
+            background:red;
+            cursor: not-allowed;
+        }
+
         &.disabled{
             animation:none !important;
             background:#e0e0e0;
