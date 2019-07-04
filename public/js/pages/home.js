@@ -212,7 +212,8 @@ $(document).ready(function () {
       time: form.find("input[name=\"time\"]").val(),
       guests: form.find("input[name=\"guests\"]").val(),
       selectedTables: selectedTables
-    }).then(function (response) {//window.location=response.data.redirect;
+    }).then(function (response) {
+      window.location = response.data.redirect;
     })["catch"](function (error) {
       console.log(error);
     });
@@ -228,7 +229,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Homestead\licenta\resources\assets\js\pages\home.js */"./resources/assets/js/pages/home.js");
+module.exports = __webpack_require__(/*! D:\Projects\xampp\htdocs\laravelapps\licenta\resources\assets\js\pages\home.js */"./resources/assets/js/pages/home.js");
 
 
 /***/ })

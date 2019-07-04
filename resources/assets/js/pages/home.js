@@ -123,7 +123,7 @@ $(document).ready(function(){
                 selectedTables:selectedTables
         })
         .then(function (response) {
-            //window.location=response.data.redirect;
+            window.location=response.data.redirect;
         })
         .catch(function (error) {
             console.log(error);

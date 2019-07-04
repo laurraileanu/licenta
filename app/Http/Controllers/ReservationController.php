@@ -32,7 +32,7 @@ class ReservationController extends Controller
 
         $datetime = Carbon::createFromFormat("d/m/Y H:i","{$data['date']} {$data['time']}");
         $tables=Reservation::checkTablesAvailability($datetime,$data['guests']);
-        $tables[2]['status']="unavailable";
+  
         return response()->json(['tables'=>$tables]);
     }
 
