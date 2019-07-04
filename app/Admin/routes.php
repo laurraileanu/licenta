@@ -12,5 +12,7 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('admin.home');
     $router->resource('/user', UserController::class);
+    $router->resource('/rezervari', ReservationsController::class);
+    $router->resource('/restaurant', RestaurantController::class);
 
 });

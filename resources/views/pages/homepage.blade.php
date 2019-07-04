@@ -48,17 +48,17 @@
                 <div id="restaurant-map" class="d-none">
                     <div class="heading-container text-center">
                         <p id="head-text"></p>
-                        <p class="smal text-secondary">click pe o masa disponibila pentru a o rezerva</p>
+                        <p class="small text-secondary">click pe o masa disponibila pentru a o rezerva</p>
                     </div>
                     <div class="map" id="map">
                         {{-- clasa 'disabled' pentru scaunele indisponibile ; fara clasa 'available' --}}
                         @foreach($tables as $table)
-                            <a class="_table" href="javascript:void(0)" data-table-id="{{$table->id}}">{{$table->name}}</a>
+                            <a class="_table" href="javascript:void(0)" data-table-id="{{$table->id}}">{{$table->id}}</a>
                         @endforeach
                         <img src="{{asset('img/restaurant.png')}}">
                     </div>
                     <div>
-                        <button id="reserve">
+                        <button id="reserve" class="btn btn-primary">
                             Rezerva
                         </button>
                     </div>

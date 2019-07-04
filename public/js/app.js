@@ -36985,14 +36985,26 @@ Notify = function Notify(e, n, t, a) {
 
 /***/ }),
 
+/***/ "./resources/assets/sass/pages/thank.scss":
+/*!************************************************!*\
+  !*** ./resources/assets/sass/pages/thank.scss ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!***************************************************************************************************************************************************************!*\
-  !*** multi ./resources/assets/js/app.js ./resources/assets/sass/pages/checkout.scss ./resources/assets/sass/pages/home.scss ./resources/assets/sass/app.scss ***!
-  \***************************************************************************************************************************************************************/
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/assets/js/app.js ./resources/assets/sass/pages/thank.scss ./resources/assets/sass/pages/checkout.scss ./resources/assets/sass/pages/home.scss ./resources/assets/sass/app.scss ***!
+  \********************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! D:\Projects\xampp\htdocs\laravelapps\licenta\resources\assets\js\app.js */"./resources/assets/js/app.js");
+__webpack_require__(/*! D:\Projects\xampp\htdocs\laravelapps\licenta\resources\assets\sass\pages\thank.scss */"./resources/assets/sass/pages/thank.scss");
 __webpack_require__(/*! D:\Projects\xampp\htdocs\laravelapps\licenta\resources\assets\sass\pages\checkout.scss */"./resources/assets/sass/pages/checkout.scss");
 __webpack_require__(/*! D:\Projects\xampp\htdocs\laravelapps\licenta\resources\assets\sass\pages\home.scss */"./resources/assets/sass/pages/home.scss");
 module.exports = __webpack_require__(/*! D:\Projects\xampp\htdocs\laravelapps\licenta\resources\assets\sass\app.scss */"./resources/assets/sass/app.scss");

@@ -179,7 +179,7 @@ $(document).ready(function () {
       var availableTables = tables.filter(function (table) {
         return table.status === 'available';
       }).length;
-      map.find('#head-text').text("Mese disponibile pentru ".concat(availableTables, " persoane pe ").concat(form.find("input[name=\"date\"]").val(), " la ").concat(form.find("input[name=\"time\"]").val()));
+      map.find('#head-text').text("Mese disponibile pentru  ".concat(form.find("input[name=\"guests\"]").val(), " persoane pe ").concat(form.find("input[name=\"date\"]").val(), " la ").concat(form.find("input[name=\"time\"]").val()));
       tables.forEach(function (table) {
         table.DOM = $("a[data-table-id=\"".concat(table.id, "\"]")).first();
         resetTable(table.DOM);

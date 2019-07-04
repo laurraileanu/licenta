@@ -20,6 +20,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
     .js('resources/assets/js/pages/home.js', 'public/js/pages')
     .js('resources/assets/js/pages/checkout.js', 'public/js/pages')
 
+   .sass('resources/assets/sass/pages/thank.scss', 'public/css/pages')
    .sass('resources/assets/sass/pages/checkout.scss', 'public/css/pages')
    .sass('resources/assets/sass/pages/home.scss', 'public/css/pages')
    .sass('resources/assets/sass/app.scss', 'public/css');

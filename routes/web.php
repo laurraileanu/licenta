@@ -13,6 +13,7 @@
 
 Route::get('/', 'HomeController@index')->name('reservation.setup');
 Route::get('/checkout', 'CheckoutController@index')->name('reservation.checkout');
+Route::get('/thank', 'ThankController@index')->name('thank');
 
 Route::get('/register', 'Web\Auth\AuthController@register')->name('register');
 Route::post('/register', 'Web\Auth\AuthController@register_post')->name('register');

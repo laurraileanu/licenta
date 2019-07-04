@@ -31,7 +31,7 @@
                 <form class="checkout-form" id="checkout-form" action="{{route('checkout.submit')}}">
                     <div class="heading-container text-center">
                         <p>Formularul de rezervare</p>
-                        <p class="smal text-secondary">Completati formularul de mai jos cu datele necesare</p>
+                        <p class="small text-secondary">Completati formularul de mai jos cu datele necesare</p>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">

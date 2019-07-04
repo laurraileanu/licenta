@@ -87,7 +87,7 @@ $(document).ready(function(){
             let availableTables= tables.filter((table)=>{
                 return table.status==='available';
             }).length;
-            map.find('#head-text').text(`Mese disponibile pentru ${availableTables} persoane pe ${form.find(`input[name="date"]`).val()} la ${form.find(`input[name="time"]`).val()}`);
+            map.find('#head-text').text(`Mese disponibile pentru  ${form.find(`input[name="guests"]`).val()} persoane pe ${form.find(`input[name="date"]`).val()} la ${form.find(`input[name="time"]`).val()}`);
 
             tables.forEach((table)=>{
                 table.DOM= $(`a[data-table-id="${table.id}"]`).first();
