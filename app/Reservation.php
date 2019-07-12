@@ -15,6 +15,7 @@ class Reservation extends Model
         'email',
         'from',
         'to',
+        'guests',
         'notes'
     ];
 
@@ -60,13 +61,13 @@ class Reservation extends Model
         if (self::checkTablesInInterval($tables,$from,$to)){
             throw new \Exception("Tables are already reserved in this interval.");
         }
-
         $reservation = Reservation::create([
             'first_name'=>$data['first_name'],
             'last_name'=>$data['last_name'],
             'phone'=>$data['phone'],
             'notes'=>$data['notes'],
             'email'=>$data['email'],
+            'guests'=>$guests,
             'from'=>$from,
             'to'=>$to
         ]);
@@ -78,8 +79,6 @@ class Reservation extends Model
                 'to'=>$to
             ]);
         }
-
-
     }
 
     /**

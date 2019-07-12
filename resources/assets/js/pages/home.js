@@ -97,7 +97,11 @@ $(document).ready(function(){
             map.removeClass('d-none');
         })
         .catch(function (error) {
-            console.log(error);
+            let errors = error.response.data.errors;
+
+            Object.keys(errors).forEach((error)=>{
+                Notify(errors[error][0], null, null, 'danger');
+            });
         })
     });
     $("#reserve").click((e)=>{
@@ -127,6 +131,11 @@ $(document).ready(function(){
         })
         .catch(function (error) {
             console.log(error);
+            let errors = error.response.data.errors;
+
+            Object.keys(errors).forEach((error)=>{
+                Notify(errors[error][0], null, null, 'danger');
+            });
         });
     });
 });

@@ -26,7 +26,6 @@ class CheckoutController extends Controller
      */
     public function index(Request $request)
     {
-    
         $currentReservation = $request->session()->get('currentReservation');
         if (!$currentReservation){
             return redirect(route('reservation.setup'));
@@ -50,6 +49,6 @@ class CheckoutController extends Controller
             throw ValidationException::withMessages(['message'=>$e->getMessage()]);
         }
 
-        return response()->json(['redirect'=>route('reservation.checkout')]);
+        return response()->json(['redirect'=>route('thank')]);
     }
 }

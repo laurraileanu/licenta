@@ -104,7 +104,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Projects\xampp\htdocs\laravelapps\licenta\resources\assets\js\pages\checkout.js */"./resources/assets/js/pages/checkout.js");
+module.exports = __webpack_require__(/*! D:\Homestead\licenta\resources\assets\js\pages\checkout.js */"./resources/assets/js/pages/checkout.js");
 
 
 /***/ })

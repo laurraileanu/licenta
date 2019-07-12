@@ -187,7 +187,10 @@ $(document).ready(function () {
       });
       map.removeClass('d-none');
     })["catch"](function (error) {
-      console.log(error);
+      var errors = error.response.data.errors;
+      Object.keys(errors).forEach(function (error) {
+        Notify(errors[error][0], null, null, 'danger');
+      });
     });
   });
   $("#reserve").click(function (e) {
@@ -216,6 +219,10 @@ $(document).ready(function () {
       window.location = response.data.redirect;
     })["catch"](function (error) {
       console.log(error);
+      var errors = error.response.data.errors;
+      Object.keys(errors).forEach(function (error) {
+        Notify(errors[error][0], null, null, 'danger');
+      });
     });
   });
 });
@@ -229,7 +236,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Projects\xampp\htdocs\laravelapps\licenta\resources\assets\js\pages\home.js */"./resources/assets/js/pages/home.js");
+module.exports = __webpack_require__(/*! D:\Homestead\licenta\resources\assets\js\pages\home.js */"./resources/assets/js/pages/home.js");
 
 
 /***/ })

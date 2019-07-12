@@ -14,5 +14,5 @@ Route::group([
     $router->resource('/user', UserController::class);
     $router->resource('/rezervari', ReservationsController::class);
     $router->resource('/restaurant', RestaurantController::class);
-
+    $router->resource('/zile', WorkingdaysController::class);
 });

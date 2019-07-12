@@ -25,7 +25,7 @@ class CreateReservationTable extends Migration
 
             $table->string('first_name');
             $table->string('last_name');
-
+            $table->integer('guests');
             $table->text('notes')->nullable();
             $table->dateTime('from');
             $table->dateTime('to');

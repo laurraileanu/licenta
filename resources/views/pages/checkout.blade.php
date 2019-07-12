@@ -92,6 +92,16 @@
                     phone:      form.find('input[name="phone"]').val(),
                     email:      form.find('input[name="email"]').val(),
                     notes:      form.find('textarea[name="notes"]').val()
+                })  .then(function (response) {
+                    window.location=response.data.redirect;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                    let errors = error.response.data.errors;
+
+                    Object.keys(errors).forEach((error)=>{
+                        Notify(errors[error][0], null, null, 'danger');
+                    });
                 });
             });
         });
