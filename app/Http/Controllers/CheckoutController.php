@@ -42,6 +42,7 @@ class CheckoutController extends Controller
         if (!$currentReservation) {
             throw ValidationException::withMessages(['message'=>'Sesiunea a expirat']);
         }
+
         $datetime = Carbon::createFromFormat("d/m/Y H:i","{$currentReservation['date']} {$currentReservation['time']}");
         try{
             Reservation::reserve($data,$datetime,$currentReservation['guests'],$currentReservation['selectedTables']);

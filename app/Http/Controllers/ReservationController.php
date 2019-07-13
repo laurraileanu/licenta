@@ -36,16 +36,18 @@ class ReservationController extends Controller
             throw ValidationException::withMessages(['time'=>'Restaurantul este inchis la aceasta ora']);
         }
 
-
         $tables = Reservation::checkTablesAvailability($datetime,$data['guests']);
-  
+
         return response()->json(['tables'=>$tables]);
     }
 
     public function reserve(AvailableTablesRequest $request)
     {
-
         $data= $request->all(['time','date','guests','selectedTables']);
+
+        if (!Reservation::isReliableReservation($data['selectedTables'],$data['guests'])){
+            throw ValidationException::withMessages(['guests'=>'Prea multe mese au fost selectate pentru acest numar de clienti']);
+        }
         $request->session()->put('currentReservation',$data);
 
         return response()->json(['redirect'=>route('reservation.checkout')]);

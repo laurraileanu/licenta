@@ -4,7 +4,6 @@ namespace App;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
 
 class Reservation extends Model
 {
@@ -32,6 +31,7 @@ class Reservation extends Model
      */
     static function checkTablesAvailability(Carbon $datetime,$guests){
         $arrTables=[];
+
         $from=  $datetime;
         $to=    (new Carbon($datetime->toDateTimeString()))->addHours(2);
 
@@ -46,7 +46,19 @@ class Reservation extends Model
         }
         return $arrTables;
     }
+    public static function isReliableReservation($tablesIds, $guests){
+        $total =0;
+        $tables= Table::whereIn('id',$tablesIds)->get();
+        $tables->each(function($table)use (&$total){
+            $total += $table->seats;
+        });
 
+        if ($total-$guests>3){
+            return false;
+        }
+
+        return true;
+    }
     /**
      * @param $data
      * @param Carbon $datetime

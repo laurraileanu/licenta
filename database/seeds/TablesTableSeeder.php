@@ -14,79 +14,106 @@ class TablesTableSeeder extends Seeder
         \App\Table::query()->truncate();
         //
         \App\Table::create(
-            ['name'=>'A']
+            [
+                'name'=>'A',
+                'seats'=> 4
+            ]
         );
         \App\Table::create(
-            ['name'=>'B']
+            ['name'=>'B',
+                'seats'=> 4]
         );
         \App\Table::create(
-            ['name'=>'C']
+            ['name'=>'C',
+                'seats'=> 4]
         );
         \App\Table::create(
-            ['name'=>'D']
+            ['name'=>'D',
+                'seats'=> 4]
         );
         \App\Table::create(
-            ['name'=>'E']
+            ['name'=>'E',
+                'seats'=> 4]
         );
         \App\Table::create(
-            ['name'=>'F']
+            ['name'=>'F',
+                'seats'=> 4]
         );
         \App\Table::create(
-            ['name'=>'G']
+            ['name'=>'G',
+                'seats'=> 4]
         );
         \App\Table::create(
-            ['name'=>'H']
+            ['name'=>'H',
+                'seats'=> 4]
         );
         \App\Table::create(
-            ['name'=>'I']
+            ['name'=>'I',
+                'seats'=> 4]
         );
         \App\Table::create(
-            ['name'=>'J']
+            ['name'=>'J',
+                'seats'=> 4]
         );
         \App\Table::create(
-            ['name'=>'K']
+            ['name'=>'K',
+                'seats'=> 2]
         );
         \App\Table::create(
-            ['name'=>'L']
+            ['name'=>'L',
+                'seats'=> 2]
         );
         \App\Table::create(
-            ['name'=>'M']
+            ['name'=>'M',
+                'seats'=> 2]
         );
         \App\Table::create(
-            ['name'=>'N']
+            ['name'=>'N',
+                'seats'=> 2]
         );
         \App\Table::create(
-            ['name'=>'O']
+            ['name'=>'O',
+                'seats'=> 2]
         );
         \App\Table::create(
-            ['name'=>'P']
+            ['name'=>'P',
+                'seats'=> 2]
         );
         \App\Table::create(
-            ['name'=>'Q']
+            ['name'=>'Q',
+                'seats'=> 2]
         );
         \App\Table::create(
-            ['name'=>'R']
+            ['name'=>'R',
+                'seats'=> 2]
         );
         \App\Table::create(
-            ['name'=>'S']
+            ['name'=>'S',
+                'seats'=> 2]
         );
         \App\Table::create(
-            ['name'=>'T']
+            ['name'=>'T',
+                'seats'=> 2]
         );
         \App\Table::create(
-            ['name'=>'U']
+            ['name'=>'U',
+                'seats'=> 2]
         );
         \App\Table::create(
-            ['name'=>'V']
+            ['name'=>'V',
+                'seats'=> 2]
         );
         \App\Table::create(
-            ['name'=>'W']
+            ['name'=>'W',
+                'seats'=> 2]
         );
         \App\Table::create(
-            ['name'=>'X']
+            ['name'=>'X',
+                'seats'=> 2]
         );
         \App\Table::create(
-            ['name'=>'Y']
+            ['name'=>'Y',
+                'seats'=> 2]
         );
     }
 }
