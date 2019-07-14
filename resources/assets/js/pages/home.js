@@ -117,7 +117,7 @@ $(document).ready(function(){
         });
         console.log(selectedTables.length);
         if (selectedTables.length===0){
-            alert('selecteaza o masa');
+            Notify('selecteaza o masa',null,null,'danger');
             return false;
         }
         axios.post('/tables/reserve', {
