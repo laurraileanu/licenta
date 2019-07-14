@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Reservation;
+use App\ReservedTable;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -76,5 +77,11 @@ class ReservationsController extends AdminController
         $form->textarea('notes', __('Notes'));
 
         return $form;
+    }
+
+    public function destroy($id)
+    {
+        Reservation::destroy($id);
+        ReservedTable::where('reservation_id',$id)->delete();
     }
 }
