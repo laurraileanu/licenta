@@ -27,9 +27,9 @@ class WorkingDaysController extends AdminController
         $grid = new Grid(new WorkDay);
 
         $grid->column('id', __('Id'));
-        $grid->column('name', __('Name'));
-        $grid->column('from', __('From'))->editable();
-        $grid->column('to', __('To'))->editable();
+        $grid->column('name', __('Nume'));
+        $grid->column('from', __('Ora start'))->editable();
+        $grid->column('to', __('Ora sfarsit'))->editable();
         $grid->disableCreateButton();
         $grid->disableRowSelector();
         $grid->actions(function ($actions) {
@@ -49,9 +49,9 @@ class WorkingDaysController extends AdminController
         $show = new Show(WorkDay::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('name', __('Name'));
-        $show->field('from', __('From'));
-        $show->field('to', __('To'));
+        $show->field('name', __('Nume'));
+        $show->field('from', __('Ora start'));
+        $show->field('to', __('Ora sfarsit'));
 
         return $show;
     }
@@ -65,9 +65,9 @@ class WorkingDaysController extends AdminController
     {
         $form = new Form(new WorkDay);
 
-        $form->text('name', __('Name'));
-        $form->text('from', __('From'));
-        $form->text('to', __('To'));
+        $form->text('name', __('Nume'));
+        $form->text('from', __('Ora start'));
+        $form->text('to', __('Ora sfarsit'));
 
         return $form;
     }

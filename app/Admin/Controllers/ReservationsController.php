@@ -29,13 +29,13 @@ class ReservationsController extends AdminController
 
         $grid->column('id', __('Id'));
         $grid->column('email', __('Email'));
-        $grid->column('phone', __('Phone'));
-        $grid->column('first_name', __('First name'));
-        $grid->column('last_name', __('Last name'));
-        $grid->column('guests', __('Guests'));
-        $grid->column('notes', __('Notes'));
-        $grid->column('from', __('From'));
-        $grid->column('to', __('To'));
+        $grid->column('phone', __('Telefon'));
+        $grid->column('first_name', __('Prenume'));
+        $grid->column('last_name', __('Nume'));
+        $grid->column('guests', __('Invitati'));
+        $grid->column('notes', __('Mentiuni'));
+        $grid->column('from', __('Sosire'));
+        $grid->column('to', __('Plecare'));
         return $grid;
     }
 
@@ -51,13 +51,13 @@ class ReservationsController extends AdminController
 
         $show->field('id', __('Id'));
         $show->field('email', __('Email'));
-        $show->field('phone', __('Phone'));
-        $show->field('first_name', __('First name'));
-        $show->field('last_name', __('Last name'));
-        $show->field('guests', __('Guests'));
-        $show->field('notes', __('Notes'));
-        $show->field('from', __('From'));
-        $show->field('to', __('To'));
+        $show->field('phone', __('Telefon'));
+        $show->field('first_name', __('Prenume'));
+        $show->field('last_name', __('Nume'));
+        $show->field('guests', __('Invitati'));
+        $show->field('notes', __('Mentiuni'));
+        $show->field('from', __('Sosire'));
+        $show->field('to', __('Plecare'));
         return $show;
     }
 
@@ -72,9 +72,9 @@ class ReservationsController extends AdminController
 
         $form->email('email', __('Email'));
         $form->mobile('phone', __('Phone'));
-        $form->text('first_name', __('First name'));
-        $form->text('last_name', __('Last name'));
-        $form->textarea('notes', __('Notes'));
+        $form->text('first_name', __('Prenume'));
+        $form->text('last_name', __('Nume'));
+        $form->textarea('notes', __('Mentiuni'));
 
         return $form;
     }

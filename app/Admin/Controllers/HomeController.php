@@ -20,29 +20,28 @@ class HomeController extends Controller
         return $content
             ->title('Dashboard')
 
-            ->row(Dashboard::title())
             ->row(function (Row $row) {
                 $row->column(4, function (Column $column) {
-                    $infoBox = new InfoBox('Rezervari pentru azi', 'users', 'aqua', '/admin/reservation',
+                    $infoBox = new InfoBox('Rezervari pentru azi', 'users', 'aqua', '/admin/rezervari',
                         Reservation::whereDate('to', Carbon::today())->count());
                     $column->append($infoBox->render());
                 });
 
                 $row->column(4, function (Column $column) {
-                    $infoBox = new InfoBox('Rezervari Ultima saptamana', 'users', 'aqua', '/admin/reservation',
+                    $infoBox = new InfoBox('Rezervari Ultima saptamana', 'users', 'aqua', '/admin/rezervari',
                         Reservation::whereBetween('created_at', [Carbon::today()->subWeek()->startOfDay(),Carbon::today()->endOfDay()])->count());
                     $column->append($infoBox->render());
                 });
 
 
                 $row->column(4, function (Column $column) {
-                    $infoBox = new InfoBox('Rezervari facute astazi', 'users', 'aqua', '/admin/reservation',
+                    $infoBox = new InfoBox('Rezervari facute astazi', 'users', 'aqua', '/admin/rezervari',
                         Reservation::whereDate('created_at', Carbon::today())->count());
                     $column->append($infoBox->render());
                 });
             })
             ->row(function (Row $row) {
-                $headers = ['E-mail', 'Telefon', 'FIRST NAME', 'LAST NAME', 'Data', 'Invitati'];
+                $headers = ['E-mail', 'Telefon', 'Prenume', 'Nume', 'Data', 'Invitati'];
 
                 $users = Reservation::whereDate('to',Carbon::today())->orderBy('created_at', 'desc')->take(10)->get()->map(function ($item) {
                     return [

@@ -71,7 +71,7 @@ class Reservation extends Model
         $to=    (new Carbon($datetime->toDateTimeString()))->addHours(2);
 
         if (self::checkTablesInInterval($tables,$from,$to)){
-            throw new \Exception("Tables are already reserved in this interval.");
+            throw new \Exception("Mesele sunt deja rezervate in acest interval.");
         }
         $reservation = Reservation::create([
             'first_name'=>$data['first_name'],
