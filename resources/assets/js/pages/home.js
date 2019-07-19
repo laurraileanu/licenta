@@ -81,7 +81,7 @@ $(document).ready(function(){
             }
         })
         .then(function (response) {
-            console.log(response);
+            // console.log(response);
             let map= $("#restaurant-map");
             tables = response.data.tables;
             let availableTables= tables.filter((table)=>{
@@ -115,7 +115,7 @@ $(document).ready(function(){
         selectedTables = selectedTables.map((table)=>{
             return table.id;
         });
-        console.log(selectedTables.length);
+        // console.log(selectedTables.length);
         if (selectedTables.length===0){
             Notify('selecteaza o masa',null,null,'danger');
             return false;
